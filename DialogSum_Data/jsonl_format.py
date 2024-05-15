@@ -19,6 +19,15 @@ for _, row in original_dataset.iterrows():
                 {"role": "model", "content": summary}]
     transformed_df.loc[len(transformed_df)] = [messages]
 
+# Use commented code below for validation/test dataset with multiple summaries
+# for _, row in original_dataset.iterrows():
+#     dialogue = row['dialogue']
+#     summaries = [row['summary1'], row['summary2'], row['summary3']]
+
+#     for summary in summaries:
+#         messages = [{"role": "user", "content": dialogue},
+#                     {"role": "model", "content": summary}]
+#         transformed_df.loc[len(transformed_df)] = [messages]
 
 # Write DataFrame to a new JSONL file
 transformed_df.to_json(filename + ".transformed.jsonl", orient="records", lines=True)
