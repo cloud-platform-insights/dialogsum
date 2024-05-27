@@ -17,6 +17,8 @@ sft_tuning_job = sft.train(
     # The following parameters are optional
     validation_dataset="gs://cloud-samples-data/ai-platform/generative_ai/sft_validation_data.jsonl",
     epochs=4,
+    # epoch_count
+    # adapter_size
     learning_rate_multiplier=1.0,
     tuned_model_display_name="tuned_gemini_pro",
 )
