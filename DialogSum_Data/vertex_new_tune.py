@@ -5,12 +5,11 @@ import vertexai
 from vertexai.preview.tuning import sft
 
 # TODO(developer): Update and un-comment below lines
-# project_id = "PROJECT_ID"
+project_id = sys.argv[1]
+# bucket = "gs://bucket-name"
+bucket = sys.argv[2]
 
 vertexai.init(project=project_id, location="us-central1")
-# bucket = "gs://bucket-name"
-bucket = sys.argv[1]
-
 
 sft_tuning_job = sft.train(
     source_model="gemini-1.0-pro-002",
